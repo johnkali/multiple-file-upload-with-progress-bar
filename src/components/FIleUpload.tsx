@@ -10,6 +10,7 @@ import {
   X,
 } from "lucide-react";
 import axios from "axios";
+import ProgresBar from "./ProgresBar";
 type FileWithProgress = {
   id: string;
   file: File;
@@ -236,21 +237,7 @@ function FileItem({ file, onRemove, uploading }: FileItemProps) {
     </div>
   );
 }
-//progress bar component
-type ProgressBarProps = {
-  progress: number;
-};
 
-function ProgresBar({ progress }: ProgressBarProps) {
-  return (
-    <div className="h-2 overflow-hidden rounded-full bg-grayscale-800">
-      <div
-        className="h-full bg-primary-500 transition-all duration-300"
-        style={{ width: `${progress}%` }}
-      ></div>
-    </div>
-  );
-}
 const getFileIcon = (mineType: string) => {
   if (mineType.startsWith("image/")) return FileImage;
   if (mineType.startsWith("video/")) return FileVideo;
