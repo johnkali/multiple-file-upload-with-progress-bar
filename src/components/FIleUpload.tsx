@@ -1,16 +1,18 @@
-import React, { useRef, useState, type ChangeEvent } from "react";
+import { useRef, useState, type ChangeEvent } from "react";
 import {
   FileAudio,
   FileImage,
   FileText,
   FileVideo,
-  Plus,
   Trash2,
   Upload,
   X,
 } from "lucide-react";
 import axios from "axios";
 import ProgresBar from "./ProgresBar";
+import FileInput from "./FileInput";
+
+
 type FileWithProgress = {
   id: string;
   file: File;
@@ -109,36 +111,6 @@ function FIleUpload() {
 }
 
 export default FIleUpload;
-
-//file input component
-type FileInputPops = {
-  inputRef: React.RefObject<HTMLInputElement | null>;
-  disabled: boolean;
-  onFileSelect: (e: ChangeEvent<HTMLInputElement>) => void;
-};
-
-function FileInput({ inputRef, disabled, onFileSelect }: FileInputPops) {
-  return (
-    <>
-      <input
-        type="file"
-        ref={inputRef}
-        onChange={onFileSelect}
-        multiple
-        className="hidden"
-        id="file-upload"
-        disabled={disabled}
-      />
-      <label
-        htmlFor="file-upload"
-        className="flex cursor-pointer items center gap-2 rounded-md bg-grayscale-700 px-6 py-2 hover:opacity-90"
-      >
-        <Plus size={18} />
-        Select Files
-      </label>
-    </>
-  );
-}
 
 //action buttons
 type ActionButtonsProps = {
