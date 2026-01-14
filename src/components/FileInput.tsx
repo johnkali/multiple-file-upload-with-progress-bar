@@ -17,6 +17,7 @@ function FileInput({ inputRef, disabled, onFileSelect }: FileInputPops) {
         className="hidden"
         id="file-upload"
         disabled={disabled}
+        data-testid="upload-input"
       />
       <label
         htmlFor="file-upload"

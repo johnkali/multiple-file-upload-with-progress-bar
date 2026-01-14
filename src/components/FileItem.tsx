@@ -1,3 +1,4 @@
+import React from 'react'
 import ProgresBar from './ProgresBar';
 
 import {

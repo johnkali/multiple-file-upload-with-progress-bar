@@ -84,7 +84,7 @@ function FileUpload({ initialFiles = [] }: FileUploadProps) {
   return (
     <>
       <div className="flex flex-col gap-4">
-        <h2 className="text-xl font-bold">File Upload</h2>
+        <h2 data-testid="upload-header" className="text-xl font-bold">File Upload</h2>
         <div className="flex gap-2">
           <FileInput
             inputRef={inputRef}
