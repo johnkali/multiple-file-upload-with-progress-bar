@@ -40,7 +40,7 @@ function FileItem({ file, onRemove, uploading }: FileItemProps) {
           </button>
         )}
       </div>
-      <div className="text-right text-xs">
+      <div className="text-right text-xs" data-testid="completed">
         {file.uploaded ? "Completed" : `${Math.round(file.progress)}%`}
       </div>
       <ProgresBar progress={file.progress} />

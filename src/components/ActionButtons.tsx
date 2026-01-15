@@ -17,6 +17,7 @@ function ActionButtons({ onUpload, onClear, disabled }: ActionButtonsProps) {
         onClick={onUpload}
         disabled={disabled}
         className="flex items-center gap-2"
+        data-testid="upload-button"
       >
         <Upload size={18} />
         Upload

@@ -17,10 +17,11 @@ function FileInput({ inputRef, disabled, onFileSelect }: FileInputPops) {
         className="hidden"
         id="file-upload"
         disabled={disabled}
-        data-testid="upload-input"
       />
       <label
         htmlFor="file-upload"
+        data-testid="upload-input"
+
         className="flex cursor-pointer items center gap-2 rounded-md bg-grayscale-700 px-6 py-2 hover:opacity-90"
       >
         <Plus size={18} />
