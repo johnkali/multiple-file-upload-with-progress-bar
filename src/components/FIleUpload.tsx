@@ -1,13 +1,11 @@
 import { useRef, useState, type ChangeEvent } from "react";
-import {
-  Trash2,
-  Upload,
-} from "lucide-react";
+
 import axios from "axios";
 import FileInput from "./FileInput";
 
 import type { FileWithProgress } from '../types';
 import FileItem from "./FileItem";
+import ActionButtons from "./ActionButtons";
 
 type FileUploadProps = {
   initialFiles?: FileWithProgress[];
@@ -106,35 +104,6 @@ function FileUpload({ initialFiles = [] }: FileUploadProps) {
 
 export default FileUpload;
 
-//action buttons
-type ActionButtonsProps = {
-  disabled: boolean;
-  onUpload: () => void;
-  onClear: () => void;
-};
-
-function ActionButtons({ onUpload, onClear, disabled }: ActionButtonsProps) {
-  return (
-    <>
-      <button
-        onClick={onUpload}
-        disabled={disabled}
-        className="flex items-center gap-2"
-      >
-        <Upload size={18} />
-        Upload
-      </button>
-      <button
-        className="flex items-center gap-2"
-        onClick={onClear}
-        disabled={disabled}
-      >
-        <Trash2 size={18} />
-        Clear All
-      </button>
-    </>
-  );
-}
 
 //file list component
 
