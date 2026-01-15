@@ -4,7 +4,7 @@ import axios from "axios";
 import FileInput from "./FileInput";
 
 import type { FileWithProgress } from '../types';
-import FileItem from "./FileItem";
+import FileList from "./FileList";
 import ActionButtons from "./ActionButtons";
 
 type FileUploadProps = {
@@ -105,35 +105,6 @@ function FileUpload({ initialFiles = [] }: FileUploadProps) {
 export default FileUpload;
 
 
-//file list component
-
-type FileListProps = {
-  files: FileWithProgress[];
-  onRemove: (id: string) => void;
-  uploading: boolean;
-};
-
-function FileList({ files, onRemove, uploading }: FileListProps) {
-  if (files.length === 0) {
-    return null;
-  }
-
-  return (
-    <div className="space-y-2">
-      <h3 className="font-semibold">Files:</h3>
-      <div className="space-y-2">
-        {files.map((file) => (
-          <FileItem
-            key={file.id}
-            file={file}
-            onRemove={onRemove}
-            uploading={uploading}
-          />
-        ))}
-      </div>
-    </div>
-  );
-}
 
 
 
